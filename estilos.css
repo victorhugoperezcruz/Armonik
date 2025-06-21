@@ -1,4 +1,36 @@
-*{
-    background-color: blueviolet;
-    color: aqua;
+/* Minimalist style for Armonik */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.btn-outline-primary {
+    border-color: #6c757d;
+    color: #6c757d;
+}
+
+.btn-outline-primary:hover {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+}
+
+h1 {
+    color: #495057;
+    font-weight: 300;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}
+
+p {
+    line-height: 1.6;
 }
