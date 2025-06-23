@@ -5,23 +5,166 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="estilos.css">
-    <title>Armonik</title>
+    <title>Bienvenido a Armonik</title>
 </head>
-<body>
+<body class="bg-light">
     <div class="container my-5">
         <div class="row">
-            <div class="col-md-8 mx-auto">
-                <div class="card shadow-sm p-4">
-                    <h1 class="display-4 mb-4 text-center">Armonik</h1>
-                    <h2 class="h4 text-muted">Bienvenido</h2>
-                    <p class="lead">biblaibad</p>
-                    <div class="d-grid gap-2 col-6 mx-auto mt-4">
-                        <a href="#" class="btn btn-outline-primary">Prueba</a>
+            <div class="col-lg-8 mx-auto">
+                <div class="card shadow-lg rounded-4 border-0">
+                    <div class="card-header bg-purple text-white text-center py-4 rounded-top-4">
+                        <h1 class="display-5 fw-bold">Bienvenido a Armonik</h1>
+                        <p class="lead mb-0">Por favor completa este breve cuestionario para continuar</p>
                     </div>
-                    <div class="mt-4">
-                        <p>Hola, soy un párrafo de prueba.</p>
-                        <p>Este es otro párrafo de prueba.</p>
+                    
+                    <div class="card-body p-4">
+                        <!-- Progress Bar -->
+                        <div class="progress mb-4" style="height: 10px;">
+                            <div class="progress-bar bg-purple" id="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        
+                        <form id="questionnaireForm">
+                            <!-- Question 1 -->
+                            <div class="question-container" id="question-1">
+                                <h3 class="question-title">Pregunta 1 de 5</h3>
+                                <div class="question-content">
+                                    <h4>¿Cómo te enteraste de Armonik?</h4>
+                                    <div class="options">
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="question1" id="q1-option1" value="Redes sociales" required>
+                                            <label class="form-check-label" for="q1-option1">Redes sociales</label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="question1" id="q1-option2" value="Amigos">
+                                            <label class="form-check-label" for="q1-option2">Amigos</label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="question1" id="q1-option3" value="Internet">
+                                            <label class="form-check-label" for="q1-option3">Internet</label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="question1" id="q1-option4" value="Otros">
+                                            <label class="form-check-label" for="q1-option4">Otros</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-purple float-end next-btn">Siguiente <i class="fas fa-arrow-right ms-1"></i></button>
+                            </div>
+
+                            <!-- Question 2 -->
+                            <div class="question-container d-none" id="question-2">
+                                <h3 class="question-title">Pregunta 2 de 5</h3>
+                                <div class="question-content">
+                                    <h4>¿Qué te interesa más de Armonik?</h4>
+                                    <div class="options">
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="question2" id="q2-option1" value="Funcionalidad" required>
+                                            <label class="form-check-label" for="q2-option1">Funcionalidad</label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="question2" id="q2-option2" value="Diseño">
+                                            <label class="form-check-label" for="q2-option2">Diseño</label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="question2" id="q2-option3" value="Facilidad de uso">
+                                            <label class="form-check-label" for="q2-option3">Facilidad de uso</label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="question2" id="q2-option4" value="Precio">
+                                            <label class="form-check-label" for="q2-option4">Precio</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-outline-secondary prev-btn"><i class="fas fa-arrow-left me-1"></i> Anterior</button>
+                                <button type="button" class="btn btn-purple float-end next-btn">Siguiente <i class="fas fa-arrow-right ms-1"></i></button>
+                            </div>
+
+                            <!-- Question 3 -->
+                            <div class="question-container d-none" id="question-3">
+                                <h3 class="question-title">Pregunta 3 de 5</h3>
+                                <div class="question-content">
+                                    <h4>¿Con qué frecuencia utilizas aplicaciones similares?</h4>
+                                    <div class="options">
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="question3" id="q3-option1" value="Diariamente" required>
+                                            <label class="form-check-label" for="q3-option1">Diariamente</label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="question3" id="q3-option2" value="Semanalmente">
+                                            <label class="form-check-label" for="q3-option2">Semanalmente</label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="question3" id="q3-option3" value="Mensualmente">
+                                            <label class="form-check-label" for="q3-option3">Mensualmente</label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="question3" id="q3-option4" value="Casi nunca">
+                                            <label class="form-check-label" for="q3-option4">Casi nunca</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-outline-secondary prev-btn"><i class="fas fa-arrow-left me-1"></i> Anterior</button>
+                                <button type="button" class="btn btn-purple float-end next-btn">Siguiente <i class="fas fa-arrow-right ms-1"></i></button>
+                            </div>
+
+                            <!-- Question 4 -->
+                            <div class="question-container d-none" id="question-4">
+                                <h3 class="question-title">Pregunta 4 de 5</h3>
+                                <div class="question-content">
+                                    <h4>¿Qué dispositivo usas principalmente?</h4>
+                                    <div class="options">
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="question4" id="q4-option1" value="Smartphone" required>
+                                            <label class="form-check-label" for="q4-option1">Smartphone</label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="question4" id="q4-option2" value="Tablet">
+                                            <label class="form-check-label" for="q4-option2">Tablet</label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="question4" id="q4-option3" value="Laptop">
+                                            <label class="form-check-label" for="q4-option3">Laptop</label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="question4" id="q4-option4" value="PC de escritorio">
+                                            <label class="form-check-label" for="q4-option4">PC de escritorio</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-outline-secondary prev-btn"><i class="fas fa-arrow-left me-1"></i> Anterior</button>
+                                <button type="button" class="btn btn-purple float-end next-btn">Siguiente <i class="fas fa-arrow-right ms-1"></i></button>
+                            </div>
+
+                            <!-- Question 5 -->
+                            <div class="question-container d-none" id="question-5">
+                                <h3 class="question-title">Pregunta 5 de 5</h3>
+                                <div class="question-content">
+                                    <h4>¿Qué característica te gustaría ver en Armonik?</h4>
+                                    <div class="options">
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="question5" id="q5-option1" value="Modo oscuro" required>
+                                            <label class="form-check-label" for="q5-option1">Modo oscuro</label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="question5" id="q5-option2" value="Notificaciones push">
+                                            <label class="form-check-label" for="q5-option2">Notificaciones push</label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="question5" id="q5-option3" value="Sincronización en la nube">
+                                            <label class="form-check-label" for="q5-option3">Sincronización en la nube</label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="question5" id="q5-option4" value="Integración con otras apps">
+                                            <label class="form-check-label" for="q5-option4">Integración con otras apps</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-outline-secondary prev-btn"><i class="fas fa-arrow-left me-1"></i> Anterior</button>
+                                <button type="submit" class="btn btn-success float-end" id="submit-btn">Finalizar <i class="fas fa-check ms-1"></i></button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -30,5 +173,6 @@
     
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 </html>
