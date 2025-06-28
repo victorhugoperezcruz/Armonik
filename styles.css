@@ -1,25 +1,25 @@
 :root {
-    /* Color palette from the image */
-    --color-primary: #6B46C1; /* Purple */
-    --color-secondary: #EC4899; /* Pink */
-    --color-accent: #F59E0B; /* Orange */
-    --color-warning: #EAB308; /* Yellow */
+    /* Paleta principal (Esta aun por verse) - Define los colores base de la aplicación */
+    --color-primary: #6B46C1; /* Morado - Color principal para botones y acentos */
+    --color-secondary: #EC4899; /* Rosa - Color secundario para elementos destacados */
+    --color-accent: #F59E0B; /* Naranja - Color de acento para llamadas a la acción */
+    --color-warning: #EAB308; /* Amarillo - Color para advertencias y notificaciones */
     
-    /* Gradient backgrounds */
+    /* Fondos difuminados - Gradientes para efectos visuales atractivos */
     --gradient-primary: linear-gradient(135deg, #6B46C1 0%, #EC4899 50%, #F59E0B 100%);
     --gradient-secondary: linear-gradient(135deg, #EC4899 0%, #F59E0B 50%, #EAB308 100%);
     --gradient-subtle: linear-gradient(135deg, rgba(107, 70, 193, 0.1) 0%, rgba(236, 72, 153, 0.1) 50%, rgba(245, 158, 11, 0.1) 100%);
     
-    /* Neutral colors */
+    /* Colores normales - Escala de grises para texto y fondos neutros */
     --color-dark: #1F2937;
     --color-gray: #6B7280;
     --color-light-gray: #F3F4F6;
     --color-white: #FFFFFF;
     
-    /* Typography */
+    /* Tipografía - Fuente principal del sitio web */
     --font-primary: 'Inter', sans-serif;
     
-    /* Spacing */
+    /* Espacio - Sistema de espaciado consistente para márgenes y padding */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 1.5rem;
@@ -27,24 +27,26 @@
     --spacing-xl: 3rem;
     --spacing-2xl: 4rem;
     
-    /* Border radius */
+    /* Borde - Radios de borde para elementos redondeados */
     --radius-sm: 0.5rem;
     --radius-md: 0.75rem;
     --radius-lg: 1rem;
     
-    /* Shadows */
+    /* Sombras - Efectos de elevación para crear profundidad visual */
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* Reset global - Elimina márgenes y padding por defecto del navegador */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilos base del body - Configuración tipográfica y de color principal */
 body {
     font-family: var(--font-primary);
     line-height: 1.6;
@@ -52,13 +54,14 @@ body {
     overflow-x: hidden;
 }
 
+/* Contenedor principal - Limita el ancho y centra el contenido */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-sm);
 }
 
-/* Header */
+/* Cabecera - Barra de navegación fija en la parte superior */
 .header {
     position: fixed;
     top: 0;
@@ -71,6 +74,7 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Navegación - Layout y espaciado de los elementos del menú */
 .nav {
     display: flex;
     justify-content: space-between;
@@ -80,6 +84,7 @@ body {
     margin: 0 auto;
 }
 
+/* Marca de la navegación - Logo con gradiente de color */
 .nav-brand h2 {
     background: var(--gradient-primary);
     -webkit-background-clip: text;
@@ -89,6 +94,7 @@ body {
     font-size: 1.5rem;
 }
 
+/* Menú de navegación - Lista horizontal de enlaces */
 .nav-menu {
     display: flex;
     list-style: none;
@@ -96,6 +102,7 @@ body {
     align-items: center;
 }
 
+/* Enlaces del menú - Efectos hover y transiciones */
 .nav-menu a {
     text-decoration: none;
     color: var(--color-dark);
@@ -108,6 +115,7 @@ body {
     color: var(--color-primary);
 }
 
+/* Efecto de subrayado animado en hover */
 .nav-menu a::after {
     content: '';
     position: absolute;
@@ -123,6 +131,7 @@ body {
     width: 100%;
 }
 
+/* Botón de login - Estilo especial para destacar */
 .btn-login {
     background: var(--gradient-primary);
     color: white !important;
@@ -135,6 +144,7 @@ body {
     display: none;
 }
 
+/* Menú hamburguesa - Para navegación móvil */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -149,7 +159,7 @@ body {
     transition: 0.3s;
 }
 
-/* Hero Section */
+/* Sección HERO - Área principal de presentación con layout de dos columnas */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -160,6 +170,7 @@ body {
     overflow: hidden;
 }
 
+/* Elemento decorativo de fondo para la sección hero */
 .hero::before {
     content: '';
     position: absolute;
@@ -173,6 +184,7 @@ body {
     transform: rotate(45deg);
 }
 
+/* Contenido principal del hero - Grid de dos columnas */
 .hero-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -185,6 +197,7 @@ body {
     width: 100%;
 }
 
+/* Título principal - Texto grande con gradiente */
 .hero h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
@@ -195,6 +208,7 @@ body {
     margin-bottom: var(--spacing-sm);
 }
 
+/* Subtítulo del hero */
 .hero-subtitle {
     font-size: clamp(1.1rem, 2.5vw, 1.5rem);
     color: var(--color-gray);
@@ -202,6 +216,7 @@ body {
     font-weight: 600;
 }
 
+/* Descripción del hero */
 .hero-description {
     font-size: clamp(0.9rem, 2vw, 1.1rem);
     color: var(--color-gray);
@@ -209,12 +224,14 @@ body {
     line-height: 1.8;
 }
 
+/* Contenedor de botones del hero */
 .hero-buttons {
     display: flex;
     gap: var(--spacing-md);
     flex-wrap: wrap;
 }
 
+/* Estilos base para todos los botones */
 .btn {
     padding: var(--spacing-md) var(--spacing-xl);
     border-radius: var(--radius-md);
@@ -230,6 +247,7 @@ body {
     min-width: 160px;
 }
 
+/* Botón primario - Estilo principal con gradiente */
 .btn-primary {
     background: var(--gradient-primary);
     color: white;
@@ -241,6 +259,7 @@ body {
     box-shadow: var(--shadow-xl);
 }
 
+/* Botón secundario - Estilo alternativo con borde */
 .btn-secondary {
     background: white;
     color: var(--color-primary);
@@ -252,12 +271,14 @@ body {
     color: white;
 }
 
+/* Contenedor visual del hero */
 .hero-visual {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Tarjeta flotante animada - Elemento visual interactivo */
 .floating-card {
     background: white;
     padding: var(--spacing-lg);
@@ -269,6 +290,7 @@ body {
     width: 100%;
 }
 
+/* Animación de flotación para la tarjeta */
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
@@ -280,6 +302,7 @@ body {
     font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
+/* Contenido de métricas en la tarjeta flotante */
 .card-content {
     display: flex;
     gap: var(--spacing-lg);
@@ -291,6 +314,7 @@ body {
     flex: 1;
 }
 
+/* Valor de métrica con gradiente */
 .metric-value {
     display: block;
     font-size: clamp(1.2rem, 3vw, 2rem);
@@ -306,15 +330,17 @@ body {
     font-size: clamp(0.8rem, 1.5vw, 0.9rem);
 }
 
-/* Sections */
+/* Secciones generales - Espaciado estándar */
 .section {
     padding: var(--spacing-2xl) 0;
 }
 
+/* Fondo claro para secciones alternadas */
 .bg-light {
     background: var(--color-light-gray);
 }
 
+/* Títulos de sección - Centrados con gradiente */
 .section-title {
     font-size: clamp(2rem, 4vw, 2.5rem);
     font-weight: 700;
@@ -326,13 +352,14 @@ body {
     background-clip: text;
 }
 
-/* Features Grid */
+/* Grid de funcionalidades - Layout responsivo de tarjetas */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-xl);
 }
 
+/* Tarjetas de funcionalidades - Efectos hover y sombras */
 .feature-card {
     background: white;
     padding: var(--spacing-xl);
@@ -348,6 +375,7 @@ body {
     border-color: var(--color-primary);
 }
 
+/* Icono de funcionalidad */
 .feature-icon {
     font-size: 3rem;
     margin-bottom: var(--spacing-md);
@@ -365,6 +393,7 @@ body {
     line-height: 1.6;
 }
 
+/* Lista de características con checkmarks */
 .feature-list {
     list-style: none;
 }
@@ -384,13 +413,14 @@ body {
     font-weight: bold;
 }
 
-/* Tech Grid */
+/* Grid de tecnologías - Muestra las tecnologías utilizadas */
 .tech-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--spacing-xl);
 }
 
+/* Categorías de tecnología */
 .tech-category {
     background: white;
     padding: var(--spacing-xl);
@@ -405,6 +435,7 @@ body {
     font-size: clamp(1.1rem, 2vw, 1.2rem);
 }
 
+/* Contenedor de tecnologías */
 .tech-items {
     display: flex;
     flex-wrap: wrap;
@@ -412,6 +443,7 @@ body {
     justify-content: center;
 }
 
+/* Etiquetas individuales de tecnología */
 .tech-item {
     background: var(--gradient-subtle);
     padding: var(--spacing-xs) var(--spacing-md);
@@ -422,13 +454,14 @@ body {
     border: 1px solid rgba(107, 70, 193, 0.2);
 }
 
-/* Timeline */
+/* Línea de tiempo - Muestra el cronograma de desarrollo */
 .timeline {
     max-width: 800px;
     margin: 0 auto;
     position: relative;
 }
 
+/* Línea central de la timeline */
 .timeline::before {
     content: '';
     position: absolute;
@@ -440,6 +473,7 @@ body {
     transform: translateX(-50%);
 }
 
+/* Elementos individuales de la timeline */
 .timeline-item {
     position: relative;
     margin-bottom: var(--spacing-2xl);
@@ -447,10 +481,12 @@ body {
     align-items: center;
 }
 
+/* Alterna la posición de elementos impares */
 .timeline-item:nth-child(odd) {
     flex-direction: row-reverse;
 }
 
+/* Marcador circular en la línea de tiempo */
 .timeline-marker {
     width: 20px;
     height: 20px;
@@ -462,6 +498,7 @@ body {
     z-index: 2;
 }
 
+/* Contenido de cada elemento de la timeline */
 .timeline-content {
     background: white;
     padding: var(--spacing-lg);
@@ -477,6 +514,7 @@ body {
     font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
+/* Fecha en la timeline */
 .timeline-date {
     color: var(--color-primary);
     font-weight: 600;
@@ -502,13 +540,14 @@ body {
     color: var(--color-primary);
 }
 
-/* Pricing Grid */
+/* Grid de precios - Muestra los planes de precios */
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--spacing-xl);
 }
 
+/* Tarjetas de precios */
 .pricing-card {
     background: white;
     padding: var(--spacing-xl);
@@ -519,6 +558,7 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Tarjeta destacada - Plan recomendado */
 .pricing-card.featured {
     border: 2px solid var(--color-primary);
     transform: scale(1.05);
@@ -539,6 +579,7 @@ body {
     font-size: clamp(1.1rem, 2vw, 1.2rem);
 }
 
+/* Precio destacado con gradiente */
 .price {
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
@@ -549,6 +590,7 @@ body {
     margin-bottom: var(--spacing-lg);
 }
 
+/* Lista de características de cada plan */
 .pricing-features {
     list-style: none;
     text-align: left;
@@ -569,7 +611,7 @@ body {
     font-weight: bold;
 }
 
-/* Contact */
+/* Sección de contacto - Layout de dos columnas */
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -577,6 +619,7 @@ body {
     align-items: start;
 }
 
+/* Información de contacto */
 .contact-info h3 {
     margin-bottom: var(--spacing-md);
     color: var(--color-dark);
@@ -589,6 +632,7 @@ body {
     line-height: 1.6;
 }
 
+/* Detalles de contacto */
 .contact-details {
     display: flex;
     flex-direction: column;
@@ -606,6 +650,7 @@ body {
     min-width: 80px;
 }
 
+/* Formulario de contacto */
 .contact-form {
     background: white;
     padding: var(--spacing-xl);
@@ -613,10 +658,12 @@ body {
     box-shadow: var(--shadow-lg);
 }
 
+/* Grupos de campos del formulario */
 .form-group {
     margin-bottom: var(--spacing-md);
 }
 
+/* Campos de entrada del formulario */
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -641,13 +688,14 @@ body {
     resize: vertical;
 }
 
-/* Footer */
+/* Pie de página - Footer del sitio */
 .footer {
     background: var(--color-dark);
     color: white;
     padding: var(--spacing-2xl) 0 var(--spacing-lg);
 }
 
+/* Contenido del footer en grid */
 .footer-content {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -655,6 +703,7 @@ body {
     margin-bottom: var(--spacing-xl);
 }
 
+/* Marca en el footer */
 .footer-brand h3 {
     background: var(--gradient-primary);
     -webkit-background-clip: text;
@@ -663,6 +712,7 @@ body {
     margin-bottom: var(--spacing-sm);
 }
 
+/* Enlaces del footer */
 .footer-links {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -688,6 +738,7 @@ body {
     color: white;
 }
 
+/* Parte inferior del footer */
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: var(--spacing-lg);
@@ -695,7 +746,7 @@ body {
     color: rgba(255, 255, 255, 0.7);
 }
 
-/* Login Page Styles */
+/* Estilos para la página de login */
 .login-page {
     margin: 0;
     padding: 0;
@@ -703,12 +754,14 @@ body {
     overflow: hidden;
 }
 
+/* Contenedor principal del login - Split layout */
 .login-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 100vh;
 }
 
+/* Lado izquierdo del login - Formulario */
 .login-left {
     padding: var(--spacing-2xl);
     display: flex;
@@ -718,6 +771,7 @@ body {
     margin: 0 auto;
 }
 
+/* Marca del login */
 .login-brand {
     text-align: center;
     margin-bottom: var(--spacing-2xl);
@@ -738,6 +792,7 @@ body {
     font-size: 1.1rem;
 }
 
+/* Formulario de login */
 .login-form {
     margin-bottom: var(--spacing-xl);
 }
@@ -753,6 +808,7 @@ body {
     font-weight: 500;
 }
 
+/* Opciones del formulario - Recordar y olvidar contraseña */
 .form-options {
     display: flex;
     justify-content: space-between;
@@ -762,6 +818,7 @@ body {
     gap: var(--spacing-sm);
 }
 
+/* Checkbox personalizado */
 .checkbox-label {
     display: flex;
     align-items: center;
@@ -773,6 +830,7 @@ body {
     display: none;
 }
 
+/* Marca visual del checkbox */
 .checkmark {
     width: 18px;
     height: 18px;
@@ -799,17 +857,20 @@ body {
     transform: translate(-50%, -50%);
 }
 
+/* Enlace para recuperar contraseña */
 .forgot-password {
     color: var(--color-primary);
     text-decoration: none;
     font-size: 0.9rem;
 }
 
+/* Botón de ancho completo */
 .btn-full {
     width: 100%;
     margin-bottom: var(--spacing-lg);
 }
 
+/* Divisor entre login normal y social */
 .login-divider {
     text-align: center;
     position: relative;
@@ -836,6 +897,7 @@ body {
     z-index: 2;
 }
 
+/* Login social - Botones de Google, Facebook, etc. */
 .social-login {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -843,6 +905,7 @@ body {
     margin-bottom: var(--spacing-lg);
 }
 
+/* Botones de redes sociales */
 .btn-social {
     display: flex;
     align-items: center;
@@ -864,6 +927,7 @@ body {
     background: var(--gradient-subtle);
 }
 
+/* Pie del formulario de login */
 .login-footer {
     text-align: center;
 }
@@ -874,6 +938,7 @@ body {
     font-size: 0.9rem;
 }
 
+/* Enlaces de registro y volver al inicio */
 .signup-link,
 .back-home {
     color: var(--color-primary);
@@ -881,6 +946,7 @@ body {
     font-weight: 500;
 }
 
+/* Lado derecho del login - Visual */
 .login-right {
     background: var(--gradient-primary);
     display: flex;
@@ -890,6 +956,7 @@ body {
     overflow: hidden;
 }
 
+/* Contenido visual del login */
 .login-visual {
     color: white;
     text-align: center;
@@ -909,6 +976,7 @@ body {
     line-height: 1.6;
 }
 
+/* Vista previa de funcionalidades */
 .features-preview {
     display: flex;
     flex-direction: column;
@@ -916,6 +984,7 @@ body {
     margin-bottom: var(--spacing-xl);
 }
 
+/* Elemento individual de vista previa */
 .feature-preview {
     display: flex;
     align-items: center;
@@ -926,12 +995,14 @@ body {
     backdrop-filter: blur(10px);
 }
 
+/* Mockup visual de la aplicación */
 .visual-mockup {
     max-width: 300px;
     margin: 0 auto;
     width: 100%;
 }
 
+/* Tarjeta del mockup */
 .mockup-card {
     background: white;
     border-radius: var(--radius-lg);
@@ -939,11 +1010,13 @@ body {
     box-shadow: var(--shadow-xl);
 }
 
+/* Header del mockup - Simula ventana del navegador */
 .mockup-header {
     background: #f8f9fa;
     padding: var(--spacing-md);
 }
 
+/* Puntos decorativos del header */
 .mockup-dots {
     display: flex;
     gap: var(--spacing-xs);
@@ -968,10 +1041,12 @@ body {
     background: #28ca42;
 }
 
+/* Contenido del mockup */
 .mockup-content {
     padding: var(--spacing-lg);
 }
 
+/* Gráfico simulado */
 .mockup-chart {
     display: flex;
     align-items: end;
@@ -980,6 +1055,7 @@ body {
     margin-bottom: var(--spacing-md);
 }
 
+/* Barras del gráfico */
 .chart-bar {
     flex: 1;
     background: var(--gradient-primary);
@@ -987,6 +1063,7 @@ body {
     min-height: 20px;
 }
 
+/* Estadísticas del mockup */
 .mockup-stats {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1008,7 +1085,7 @@ body {
     color: var(--color-gray);
 }
 
-/* Mobile Navigation */
+/* Navegación móvil - Menú hamburguesa activo */
 .nav-menu.active {
     display: flex;
     position: fixed;
@@ -1022,6 +1099,7 @@ body {
     z-index: 999;
 }
 
+/* Animación del menú hamburguesa */
 .hamburger.active span:nth-child(1) {
     transform: rotate(-45deg) translate(-5px, 6px);
 }
@@ -1034,7 +1112,8 @@ body {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* Responsive Design */
+/* Diseño responsivo */
+/* Tablets - 1024px y menor */
 @media (max-width: 1024px) {
     .container {
         padding: 0 var(--spacing-md);
@@ -1053,7 +1132,9 @@ body {
     }
 }
 
+/* Dispositivos móviles - 768px y menor */
 @media (max-width: 768px) {
+    /* Mostrar menú hamburguesa en móvil */
     .hamburger {
         display: flex;
     }
@@ -1066,6 +1147,7 @@ body {
         padding: var(--spacing-sm);
     }
     
+    /* Hero en columna única */
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1080,16 +1162,19 @@ body {
         max-width: 250px;
     }
     
+    /* Contacto en columna única */
     .contact-content {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
     }
     
+    /* Footer en columna única */
     .footer-content {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
     }
     
+    /* Timeline ajustada para móvil */
     .timeline::before {
         left: 20px;
     }
@@ -1113,6 +1198,7 @@ body {
         margin-right: 0;
     }
     
+    /* Login en columna única */
     .login-container {
         grid-template-columns: 1fr;
     }
@@ -1134,19 +1220,15 @@ body {
         transform: translateY(-5px);
     }
     
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .tech-grid {
-        grid-template-columns: 1fr;
-    }
-    
+    /* Grids en columna única */
+    .features-grid,
+    .tech-grid,
     .pricing-grid {
         grid-template-columns: 1fr;
     }
 }
 
+/* Móviles pequeños - 480px y menor */
 @media (max-width: 480px) {
     .hero {
         padding: var(--spacing-xl) var(--spacing-sm);
@@ -1160,6 +1242,7 @@ body {
         padding: 0 var(--spacing-sm);
     }
     
+    /* Botones en columna */
     .hero-buttons {
         flex-direction: column;
         width: 100%;
@@ -1170,10 +1253,12 @@ body {
         min-width: auto;
     }
     
+    /* Login social en columna */
     .social-login {
         grid-template-columns: 1fr;
     }
     
+    /* Opciones de formulario en columna */
     .form-options {
         flex-direction: column;
         align-items: flex-start;
@@ -1189,12 +1274,10 @@ body {
         min-width: auto;
     }
     
+    /* Padding reducido en móviles */
     .feature-card,
     .tech-category,
-    .pricing-card {
-        padding: var(--spacing-lg);
-    }
-    
+    .pricing-card,
     .contact-form,
     .login-left {
         padding: var(--spacing-lg);
@@ -1210,6 +1293,7 @@ body {
     }
 }
 
+/* Móviles muy pequeños - 320px y menor */
 @media (max-width: 320px) {
     .nav-brand h2 {
         font-size: 1.2rem;
@@ -1234,7 +1318,8 @@ body {
     }
 }
 
-/* Animations */
+/* Animaciones */
+/* Animación de aparición desde abajo */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -1246,6 +1331,7 @@ body {
     }
 }
 
+/* Aplicar animación a elementos principales */
 .feature-card,
 .tech-category,
 .pricing-card,
@@ -1253,18 +1339,18 @@ body {
     animation: fadeInUp 0.6s ease-out;
 }
 
-/* Smooth scrolling */
+/* Desplazamiento suave */
 html {
     scroll-behavior: smooth;
 }
 
-/* Loading states */
+/* Estados de carga */
 .btn:disabled {
     opacity: 0.6;
     cursor: not-allowed;
 }
 
-/* Focus states for accessibility */
+/* Estados de foco para accesibilidad */
 .btn:focus,
 input:focus,
 select:focus,
@@ -1273,7 +1359,7 @@ textarea:focus {
     outline-offset: 2px;
 }
 
-/* High contrast mode support */
+/* Soporte para modo de alto contraste */
 @media (prefers-contrast: high) {
     .feature-card,
     .tech-category,
@@ -1282,7 +1368,7 @@ textarea:focus {
     }
 }
 
-/* Reduced motion support */
+/* Soporte para movimiento reducido */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;
@@ -1295,7 +1381,7 @@ textarea:focus {
     }
 }
 
-/* Print styles */
+/* Estilos para impresión */
 @media print {
     .header,
     .hero-visual,
