@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Armonik - Conectando talento, creando artistas</title>
+    <title>Armonik - Plataforma de Gestión Empresarial</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -16,12 +16,12 @@
             </div>
             <ul class="nav-menu">
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#quienes-somos">¿Quiénes somos?</a></li>
-                <li><a href="#como-funciona">¿Cómo funciona?</a></li>
-                <li><a href="#freemium">Freemium</a></li>
-                <li><a href="#plan-crecimiento">Plan de crecimiento</a></li>
+                <li><a href="#funcionalidades">Funcionalidades</a></li>
+                <li><a href="#tecnologias">Tecnologías</a></li>
+                <li><a href="#cronograma">Cronograma</a></li>
+                <li><a href="#presupuesto">Presupuesto</a></li>
                 <li><a href="#contacto">Contacto</a></li>
-                <li><a href="#" id="login-btn" class="nav-login">Iniciar Sesión</a></li>
+                <li><a href="login.html" class="btn-login">Iniciar Sesión</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -34,191 +34,214 @@
     <!-- Sección Hero - Área principal de presentación con título, descripción y llamadas a la acción -->
     <section id="inicio" class="hero">
         <div class="hero-content">
-            <h1>Armonik – Conectando talento, creando artistas</h1>
-            <p class="hero-subtitle">La red profesional gamificada para artistas y fans</p>
+            <h1>Armonik</h1>
+            <p class="hero-subtitle">Plataforma Integral de Gestión Empresarial</p>
             <p class="hero-description">
-                Únete a la comunidad musical más innovadora donde artistas y fans se conectan, 
-                colaboran y crecen juntos a través de experiencias gamificadas únicas.
+                Revoluciona tu empresa con nuestra plataforma todo-en-uno que integra 
+                gestión de inventarios, facturación, recursos humanos y análisis de datos.
             </p>
             <div class="hero-buttons">
-                <a href="#contacto" class="btn btn-primary">Regístrate gratis</a>
+                <a href="login.html" class="btn btn-primary">Comenzar Ahora</a>
+                <a href="#funcionalidades" class="btn btn-secondary">Conocer Más</a>
             </div>
         </div>
-    </section>
-
-    <!-- ¿Quiénes somos? Section -->
-    <section id="quienes-somos" class="section">
-        <div class="container">
-            <h2 class="section-title">¿Quiénes somos?</h2>
-            <p class="section-description">
-                Somos un equipo apasionado por la música y la tecnología, comprometidos con crear 
-                la plataforma definitiva para conectar el talento musical con oportunidades reales.
-            </p>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-avatar">LG</div>
-                    <h3>Luis González</h3>
-                    <p>Project Manager</p>
-                </div>
-                <div class="team-member">
-                    <div class="member-avatar">RB</div>
-                    <h3>Raúl Banda</h3>
-                    <p>Software Developer</p>
-                </div>
-                <div class="team-member">
-                    <div class="member-avatar">LS</div>
-                    <h3>Luis Soria</h3>
-                    <p>Software Developer</p>
-                </div>
-                <div class="team-member">
-                    <div class="member-avatar">VP</div>
-                    <h3>Víctor Pérezz</h3>
-                    <p>Software Developer</p>
-                </div>
-                <div class="team-member">
-                    <div class="member-avatar">EA</div>
-                    <h3>Emanuel Andrade</h3>
-                    <p>Social Media</p>
-                </div>
-                <div class="team-member">
-                    <div class="member-avatar">BR</div>
-                    <h3>Bladimir Rivera</h3>
-                    <p>Account Manger</p>
+        <div class="hero-visual">
+            <div class="floating-card">
+                <h3>Dashboard en Tiempo Real</h3>
+                <div class="card-content">
+                    <div class="metric">
+                        <span class="metric-value">2,847</span>
+                        <span class="metric-label">Productos</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">€45,231</span>
+                        <span class="metric-label">Ingresos</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ¿Cómo funciona? Section -->
-    <section id="como-funciona" class="section bg-light">
     <!-- Sección Funcionalidades - Presenta las características principales del sistema en tarjetas -->
     <section id="funcionalidades" class="section">
         <div class="container">
-            <h2 class="section-title">¿Cómo funciona?</h2>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-icon">📝</div>
-                    <h3>1. Registro / Onboarding</h3>
-                    <p>Se recolecta edad, tipo de usuario (artista/fan), intereses musicales para personalizar tu experiencia.</p>
+            <h2 class="section-title">Funcionalidades Principales</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Gestión de Inventarios</h3>
+                    <p>Control completo de stock, alertas automáticas y seguimiento en tiempo real de todos tus productos.</p>
+                    <ul class="feature-list">
+                        <li>Registro y categorización de productos</li>
+                        <li>Control de stock automático</li>
+                        <li>Alertas de stock mínimo</li>
+                        <li>Historial de movimientos</li>
+                    </ul>
                 </div>
 
-                <div class="step-card">
-                    <div class="step-icon">📱</div>
-                    <h3>2. Feed dinámico</h3>
-                    <p>Muestra publicaciones personalizadas según tus gustos musicales y conexiones profesionales.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Sistema de Facturación</h3>
+                    <p>Genera facturas profesionales, gestiona pagos y mantén un control financiero completo.</p>
+                    <ul class="feature-list">
+                        <li>Generación automática de facturas</li>
+                        <li>Múltiples métodos de pago</li>
+                        <li>Seguimiento de pagos pendientes</li>
+                        <li>Reportes financieros detallados</li>
+                    </ul>
                 </div>
 
-                <div class="step-card">
-                    <div class="step-icon">🤝</div>
-                    <h3>3. Red de contactos</h3>
-                    <p>Búsqueda y sugerencias de conexiones profesionales basadas en tu perfil y objetivos.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Recursos Humanos</h3>
+                    <p>Administra tu equipo, horarios, nóminas y evaluaciones desde una sola plataforma.</p>
+                    <ul class="feature-list">
+                        <li>Gestión de empleados</li>
+                        <li>Control de asistencia</li>
+                        <li>Cálculo automático de nóminas</li>
+                        <li>Evaluaciones de desempeño</li>
+                    </ul>
                 </div>
 
-                <div class="step-card">
-                    <div class="step-icon">🏆</div>
-                    <h3>4. Misiones y recompensas</h3>
-                    <p>Actividades para ganar beneficios como descuentos en conciertos y suscripciones exclusivas.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Análisis y Reportes</h3>
+                    <p>Toma decisiones informadas con análisis avanzados y reportes personalizables.</p>
+                    <ul class="feature-list">
+                        <li>Dashboard ejecutivo</li>
+                        <li>Reportes personalizables</li>
+                        <li>Análisis predictivo</li>
+                        <li>Métricas en tiempo real</li>
+                    </ul>
                 </div>
 
-                <div class="step-card">
-                    <div class="step-icon">💼</div>
-                    <h3>5. Vacantes / Eventos</h3>
-                    <p>Oportunidades laborales personalizadas: ya sea para artistas o staff, según tu perfil.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Seguridad Avanzada</h3>
+                    <p>Protege tus datos con encriptación de nivel empresarial y controles de acceso granulares.</p>
+                    <ul class="feature-list">
+                        <li>Autenticación multifactor</li>
+                        <li>Encriptación end-to-end</li>
+                        <li>Roles y permisos</li>
+                        <li>Auditoría completa</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Acceso Multiplataforma</h3>
+                    <p>Accede desde cualquier dispositivo con nuestra aplicación web responsive y apps móviles.</p>
+                    <ul class="feature-list">
+                        <li>Aplicación web responsive</li>
+                        <li>Apps móviles nativas</li>
+                        <li>Sincronización en tiempo real</li>
+                        <li>Modo offline</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Modelo Freemium Section -->
-    <section id="freemium" class="section">
     <!-- Sección Tecnologías - Muestra las tecnologías utilizadas organizadas por categorías -->
     <section id="tecnologias" class="section bg-light">
         <div class="container">
-            <h2 class="section-title">Modelo Freemium</h2>
-            <div class="pricing-table">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Característica</th>
-                            <th>Versión Gratis</th>
-                            <th>Versión Premium</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Perfil básico / completo</td>
-                            <td>✔️</td>
-                            <td>✔️ + portafolio detallado</td>
-                        </tr>
-                        <tr>
-                            <td>Feed y red de contactos</td>
-                            <td>✔️</td>
-                            <td>✔️ con métricas avanzadas</td>
-                        </tr>
-                        <tr>
-                            <td>Misiones: recompensas básicas</td>
-                            <td>✔️</td>
-                            <td>✔️ descuentos y skins exclusivos</td>
-                        </tr>
-                        <tr>
-                            <td>Vacantes y eventos</td>
-                            <td>✔️</td>
-                            <td>✔️ priorización y alertas</td>
-                        </tr>
-                        <tr>
-                            <td>Personalización y herramientas editoras</td>
-                            <td>—</td>
-                            <td>✔️ filtros, plantillas VIP</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <h2 class="section-title">Tecnologías de Vanguardia</h2>
+            <div class="tech-grid">
+                <div class="tech-category">
+                    <h3>Frontend</h3>
+                    <div class="tech-items">
+                        <span class="tech-item">React.js</span>
+                        <span class="tech-item">TypeScript</span>
+                        <span class="tech-item">Material-UI</span>
+                        <span class="tech-item">Redux</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3>Backend</h3>
+                    <div class="tech-items">
+                        <span class="tech-item">Node.js</span>
+                        <span class="tech-item">Express.js</span>
+                        <span class="tech-item">MongoDB</span>
+                        <span class="tech-item">JWT</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3>Infraestructura</h3>
+                    <div class="tech-items">
+                        <span class="tech-item">AWS</span>
+                        <span class="tech-item">Docker</span>
+                        <span class="tech-item">CI/CD</span>
+                        <span class="tech-item">SSL/TLS</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Plan de Crecimiento Section -->
-    <section id="plan-crecimiento" class="section bg-light">
     <!-- Sección Cronograma - Timeline visual que muestra las fases de desarrollo del proyecto -->
     <section id="cronograma" class="section">
         <div class="container">
-            <h2 class="section-title">Plan de Crecimiento</h2>
-            <div class="roadmap">
-                <div class="roadmap-item">
-                    <div class="roadmap-marker"></div>
-                    <div class="roadmap-content">
-                        <h3>Q2 2025</h3>
-                        <p>Diseño y validación de prototipo inicial</p>
+            <h2 class="section-title">Cronograma de Desarrollo</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Fase 1: Planificación y Diseño</h3>
+                        <p class="timeline-date">Semanas 1-2</p>
+                        <ul>
+                            <li>Análisis de requerimientos detallado</li>
+                            <li>Diseño de arquitectura del sistema</li>
+                            <li>Creación de wireframes y mockups</li>
+                            <li>Definición de base de datos</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="roadmap-item">
-                    <div class="roadmap-marker"></div>
-                    <div class="roadmap-content">
-                        <h3>Q3 2025</h3>
-                        <p>Desarrollo del MVP para web (preguntas + feed mockup)</p>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Fase 2: Desarrollo del Backend</h3>
+                        <p class="timeline-date">Semanas 3-6</p>
+                        <ul>
+                            <li>Configuración del servidor y base de datos</li>
+                            <li>Desarrollo de APIs REST</li>
+                            <li>Implementación de autenticación</li>
+                            <li>Pruebas unitarias del backend</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="roadmap-item">
-                    <div class="roadmap-marker"></div>
-                    <div class="roadmap-content">
-                        <h3>Q4 2025</h3>
-                        <p>Pruebas beta con usuarios reales</p>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Fase 3: Desarrollo del Frontend</h3>
+                        <p class="timeline-date">Semanas 7-10</p>
+                        <ul>
+                            <li>Desarrollo de interfaces de usuario</li>
+                            <li>Integración con APIs del backend</li>
+                            <li>Implementación de funcionalidades principales</li>
+                            <li>Optimización para dispositivos móviles</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="roadmap-item">
-                    <div class="roadmap-marker"></div>
-                    <div class="roadmap-content">
-                        <h3>Q1 2026</h3>
-                        <p>Lanzamiento público y versión mobile</p>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Fase 4: Pruebas y Despliegue</h3>
+                        <p class="timeline-date">Semanas 11-12</p>
+                        <ul>
+                            <li>Pruebas de integración completas</li>
+                            <li>Pruebas de rendimiento y seguridad</li>
+                            <li>Configuración del entorno de producción</li>
+                            <li>Lanzamiento y monitoreo inicial</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contacto Section -->
     <!-- Sección Presupuesto - Muestra los costos del proyecto en tarjetas de precios -->
     <section id="presupuesto" class="section bg-light">
         <div class="container">
@@ -269,70 +292,52 @@
     <!-- Sección Contacto - Formulario de contacto y información de la empresa -->
     <section id="contacto" class="section">
         <div class="container">
-            <h2 class="section-title">Contacto</h2>
-            <p class="section-description">
-                Estamos aquí para ayudarte. Ponte en contacto con nosotros y descubre cómo Armonik puede transformar tu carrera musical.
-            </p>
-            
-            <div class="contact-content-centered">
-                <div class="contact-main-card">
-                    <div class="contact-header">
-                        <h3>¿Listo para unirte a la revolución musical?</h3>
-                        <p>Conecta con nuestra comunidad y lleva tu talento al siguiente nivel. Estamos comprometidos en apoyar a cada artista y profesional de la música.</p>
-                    </div>
+            <h2 class="section-title">Comienza Tu Transformación Digital</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>¿Listo para revolucionar tu empresa?</h3>
+                    <p>Nuestro equipo de expertos está preparado para llevar tu negocio al siguiente nivel con Armonik.</p>
                     
-                    <div class="contact-grid">
-                        <div class="contact-item-card">
-                            <div class="contact-icon">📧</div>
-                            <h4>Email General</h4>
-                            <p>teamarmonik@gmail.com</p>
-                            <span class="contact-note">Respuesta en 24 horas</span>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <strong>Email:</strong>
+                            <span>info@armonik.com</span>
                         </div>
-                        
-                        <div class="contact-item-card">
-                            <div class="contact-icon">💼</div>
-                            <h4>Colaboraciones</h4>
-                            <p>partnerships@armonik.com</p>
-                            <span class="contact-note">Para propuestas comerciales</span>
+                        <div class="contact-item">
+                            <strong>Teléfono:</strong>
+                            <span>+34 900 123 456</span>
                         </div>
-                        
-                        <div class="contact-item-card">
-                            <div class="contact-icon">🎵</div>
-                            <h4>Soporte Artistas</h4>
-                            <p>artists@armonik.com</p>
-                            <span class="contact-note">Ayuda especializada</span>
-                        </div>
-                    </div>
-                    
-                    <div class="social-section">
-                        <h4>Síguenos en nuestras redes</h4>
-                        <div class="social-links-enhanced">
-                            <a href="#" target="_blank" class="social-link">
-                                <span class="social-icon">📸</span>
-                                <div class="social-text">
-                                    <strong>Instagram</strong>
-                                    <span>@armonikmusic</span>
-                                </div>
-                            </a>
-                            <a href="#" target="_blank" class="social-link">
-                                <span class="social-icon">📹</span>
-                                <div class="social-text">
-                                    <strong>YouTube</strong>
-                                    <span>Armonik Official</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="cta-section">
-                        <h4>¿Tienes alguna pregunta?</h4>
-                        <p>Nuestro equipo está listo para ayudarte a dar el primer paso en tu carrera musical.</p>
-                        <div class="cta-buttons">
-                            <a href="login.html" class="btn btn-primary">Únete Ahora</a>
-                            <a href="mailto:teamarmonik@gmail.com" class="btn btn-secondary">Escríbenos</a>
+                        <div class="contact-item">
+                            <strong>Horario:</strong>
+                            <span>Lunes a Viernes, 9:00 - 18:00</span>
                         </div>
                     </div>
                 </div>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email corporativo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Empresa">
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Tamaño de empresa</option>
+                            <option value="1-10">1-10 empleados</option>
+                            <option value="11-50">11-50 empleados</option>
+                            <option value="51-200">51-200 empleados</option>
+                            <option value="200+">Más de 200 empleados</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Cuéntanos sobre tu proyecto y necesidades específicas"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Solicitar Demostración</button>
+                </form>
             </div>
         </div>
     </section>
@@ -343,52 +348,29 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <h3>Armonik</h3>
-                    <p>Conectando talento, creando artistas a través de la música y la tecnología.</p>
+                    <p>Transformando empresas a través de la tecnología</p>
                 </div>
-                
                 <div class="footer-links">
                     <div class="footer-section">
-                        <h4>Plataforma</h4>
+                        <h4>Producto</h4>
                         <ul>
-                            <li><a href="#como-funciona">¿Cómo funciona?</a></li>
-                            <li><a href="#freemium">Planes y Precios</a></li>
-                            <li><a href="#contacto">Contacto</a></li>
+                            <li><a href="#funcionalidades">Funcionalidades</a></li>
+                            <li><a href="#presupuesto">Precios</a></li>
                             <li><a href="login.html">Iniciar Sesión</a></li>
                         </ul>
                     </div>
-                    
                     <div class="footer-section">
-                        <h4>Legal</h4>
+                        <h4>Empresa</h4>
                         <ul>
+                            <li><a href="#inicio">Sobre Nosotros</a></li>
+                            <li><a href="#contacto">Contacto</a></li>
                             <li><a href="#">Política de Privacidad</a></li>
-                            <li><a href="#">Términos de Servicio</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-section">
-                        <h4>Contacto</h4>
-                        <ul>
-                            <li><a href="mailto:teamarmonik@gmail.com">teamarmonik@gmail.com</a></li>
-                            <li><a href="tel:+524445225610">+52 (444) 5225610</a></li>
-                            <li>Guadalajara, Jalisco</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <p>&copy; 2025 Armonik. Todos los derechos reservados.</p>
-                    <div class="footer-bottom-links">
-                        <a href="#">Política de Privacidad</a>
-                        <span>•</span>
-                        <a href="#">Términos</a>
-                    </div>
-                    <div class="footer-music-note">
-                        <span>🎵</span>
-                        <span>Hecho con ❤️ para la música</span>
-                    </div>
-                </div>
+                <p>&copy; 2024 Armonik. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
