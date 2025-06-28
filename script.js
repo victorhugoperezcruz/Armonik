@@ -1,4 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Handle login button click
+    const loginBtn = document.getElementById('login-btn');
+    if (loginBtn) {
+        loginBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = 'login.html';
+        });
+    }
+
     // Mobile navigation toggle
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
@@ -145,50 +154,89 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Login form handling
-    const loginForm = document.querySelector('.login-form');
+    // Handle auth tabs switching
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const authForms = document.querySelectorAll('.auth-form');
+    
+    if (tabButtons.length > 0) {
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const targetTab = this.getAttribute('data-tab');
+                
+                // Remove active class from all tabs and forms
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                authForms.forEach(form => form.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                // Show corresponding form
+                const targetForm = targetTab === 'login' ? 
+                    document.getElementById('login-form') : 
+                    document.getElementById('register-form');
+                
+                if (targetForm) {
+                    targetForm.classList.add('active');
+                }
+            });
+        });
+    }
+
+    // Handle register form submission
+    const registerForm = document.getElementById('register-form');
+    if (registerForm) {
+        registerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(registerForm);
+            const name = registerForm.querySelector('input[type="text"]').value;
+            const email = registerForm.querySelector('input[type="email"]').value;
+            const userType = registerForm.querySelector('select').value;
+            const password = registerForm.querySelectorAll('input[type="password"]')[0].value;
+            const confirmPassword = registerForm.querySelectorAll('input[type="password"]')[1].value;
+            
+            // Basic validation
+            if (password !== confirmPassword) {
+                alert('Las contraseñas no coinciden.');
+                return;
+            }
+            
+            if (password.length < 6) {
+                alert('La contraseña debe tener al menos 6 caracteres.');
+                return;
+            }
+            
+            if (!userType) {
+                alert('Por favor selecciona un tipo de usuario.');
+                return;
+            }
+            
+            // Simulate registration process
+            alert(`¡Bienvenido a Armonik, ${name}! Tu cuenta como ${userType} ha sido creada exitosamente.`);
+            
+            // Here you would normally send the data to your backend
+            // For demo purposes, redirect to dashboard
+            window.location.href = 'dashboard.html';
+        });
+    }
+
+    // Enhanced login form handling
+    const loginForm = document.getElementById('login-form');
     if (loginForm) {
         loginForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const email = this.querySelector('#email').value;
-            const password = this.querySelector('#password').value;
+            const email = loginForm.querySelector('input[type="email"]').value;
+            const password = loginForm.querySelector('input[type="password"]').value;
             
-            // Basic validation
-            if (!email || !password) {
-                alert('Por favor, completa todos los campos.');
-                return;
+            if (email && password) {
+                alert('¡Bienvenido de vuelta a Armonik!');
+                // Here you would normally handle the login logic
+                window.location.href = 'dashboard.html';
             }
-            
-            if (!isValidEmail(email)) {
-                alert('Por favor, introduce un email válido.');
-                return;
-            }
-            
-            // Show loading state
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Iniciando sesión...';
-            submitBtn.disabled = true;
-            
-            // Simulate login
-            setTimeout(() => {
-                alert('¡Bienvenido a Armonik! Redirigiendo al dashboard...');
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 2000);
         });
     }
-
-    // Social login buttons
-    const socialButtons = document.querySelectorAll('.btn-social');
-    socialButtons.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const provider = this.classList.contains('btn-google') ? 'Google' : 'Microsoft';
-            alert(`Iniciando sesión con ${provider}...`);
-        });
-    });
 
     // Email validation function
     function isValidEmail(email) {
