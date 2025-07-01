@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil | Armonik</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="feed.css">
+    <style>
+        .form-label {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .edit-profile-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .profile-pic-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+            position: relative;
+            border: 3px solid white;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .profile-pic-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .change-photo-btn {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            text-align: center;
+            padding: 8px 0;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .change-photo-btn:hover {
+            background: rgba(0,0,0,0.7);
+        }
+        
+        .cover-photo-container {
+            height: 200px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 20px;
+            background: var(--gradient-primary);
+        }
+        
+        .cover-photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+        
+        .change-cover-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .change-cover-btn:hover {
+            background: rgba(0,0,0,0.7);
+        }
+        
+        .card-header {
+            background: white;
+            border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+            font-weight: 600;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg feed-navbar fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <h2 style="margin: 0; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 700;">Armonik</h2>
+            </a>
+            
+            <div class="d-flex order-lg-3">
+                <div class="dropdown profile-dropdown ms-3">
+                    <a class="dropdown-toggle d-flex align-items-center" href="#" role="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://i.pravatar.cc/300?img=8" alt="Foto de perfil" class="profile-img">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                        <li><a class="dropdown-item" href="perfil.html"><i class="bi bi-person me-2"></i>Mi perfil</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Configuración</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="index.html"><i class="bi bi-box-arrow-right me-2"></i>Cerrar sesión</a></li>
+                    </ul>
+                </div>
+                
+                <button class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="input-group search-bar mx-lg-auto my-3 my-lg-0">
+                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                    <input type="text" class="form-control" placeholder="Buscar artistas, fans o posts...">
+                </div>
+                
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="feed.html"><i class="bi bi-house-door me-1"></i><span class="nav-text">Feed</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-trophy me-1"></i><span class="nav-text">Misiones</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-people me-1"></i><span class="nav-text">Red</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-calendar-event me-1"></i><span class="nav-text">Eventos</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container" style="padding-top: 90px; padding-bottom: 40px;">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="mb-0">Editar Perfil</h2>
+                    <a href="perfil.html" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left me-1"></i> Volver al perfil
+                    </a>
+                </div>
+                
+                <!-- Edit Profile Form -->
+                <div class="card">
+                    <div class="card-body p-4">
+                        <form>
+                            <!-- Cover Photo Section -->
+                            <div class="cover-photo-container mb-4">
+                                <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1600&h=400&q=80" alt="Cover image">
+                                <button type="button" class="change-cover-btn">
+                                    <i class="bi bi-camera me-1"></i> Cambiar portada
+                                </button>
+                            </div>
+                            
+                            <!-- Profile Photo Section -->
+                            <div class="text-center mb-4">
+                                <div class="profile-pic-container">
+                                    <img src="https://i.pravatar.cc/300?img=8" alt="Foto de perfil">
+                                    <div class="change-photo-btn">
+                                        <i class="bi bi-camera"></i> Cambiar foto
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-4">
+                                <div class="col-md-6 mb-3">
+                                    <label for="fullName" class="form-label">Nombre completo</label>
+                                    <input type="text" class="form-control" id="fullName" value="Carlos Moreno">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="username" class="form-label">Nombre de usuario</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">@</span>
+                                        <input type="text" class="form-control" id="username" value="carlosmoreno">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="bio" class="form-label">Biografía</label>
+                                <textarea class="form-control" id="bio" rows="4">Guitarrista apasionado, compositor y productor. Explorando sonidos que combinen el rock clásico con elementos electrónicos. Actualmente trabajando en mi nuevo EP "Ecos del Silencio".</textarea>
+                                <small class="text-muted">Máximo 250 caracteres</small>
+                            </div>
+                            
+                            <div class="row mb-4">
+                                <div class="col-md-6 mb-3">
+                                    <label for="userType" class="form-label">Tipo de usuario</label>
+                                    <select class="form-select" id="userType">
+                                        <option value="artist" selected>Artista</option>
+                                        <option value="fan">Fan</option>
+                                        <option value="producer">Productor</option>
+                                        <option value="venue">Establecimiento</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="specialty" class="form-label">Especialidad/Instrumento</label>
+                                    <input type="text" class="form-control" id="specialty" value="Guitarrista y compositor">
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    Información de contacto
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="email" value="carlos.moreno@ejemplo.com">
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="phone" class="form-label">Teléfono</label>
+                                            <input type="text" class="form-control" id="phone" value="+52 123 456 7890">
+                                        </div>
+                                    </div>
+                                    <div class="form-check mt-2">
+                                        <input class="form-check-input" type="checkbox" id="privateContactInfo" checked>
+                                        <label class="form-check-label" for="privateContactInfo">
+                                            Mantener información de contacto privada
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    Redes sociales
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label for="instagram" class="form-label">Instagram</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">instagram.com/</span>
+                                            <input type="text" class="form-control" id="instagram" value="carlosmoreno.music">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="spotify" class="form-label">Spotify</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">spotify.com/artist/</span>
+                                            <input type="text" class="form-control" id="spotify" value="carlosmoreno">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="youtube" class="form-label">YouTube</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">youtube.com/c/</span>
+                                            <input type="text" class="form-control" id="youtube" value="CarlosMorenoMusic">
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-primary btn-sm mt-2">
+                                        <i class="bi bi-plus-circle me-1"></i> Añadir más redes
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    Preferencias
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Géneros musicales favoritos</label>
+                                        <div class="d-flex flex-wrap gap-2">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="rock" checked>
+                                                <label class="form-check-label" for="rock">Rock</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="pop" checked>
+                                                <label class="form-check-label" for="pop">Pop</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="indie">
+                                                <label class="form-check-label" for="indie">Indie</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="electronic" checked>
+                                                <label class="form-check-label" for="electronic">Electrónica</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="jazz">
+                                                <label class="form-check-label" for="jazz">Jazz</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="classical">
+                                                <label class="form-check-label" for="classical">Clásica</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="location" class="form-label">Ubicación</label>
+                                        <input type="text" class="form-control" id="location" value="Ciudad de México, México">
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="language" class="form-label">Idioma preferido</label>
+                                        <select class="form-select" id="language">
+                                            <option value="es" selected>Español</option>
+                                            <option value="en">Inglés</option>
+                                            <option value="pt">Portugués</option>
+                                            <option value="fr">Francés</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    Privacidad
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" id="profileVisible" checked>
+                                        <label class="form-check-label" for="profileVisible">Perfil visible para todos</label>
+                                    </div>
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" id="showActivity" checked>
+                                        <label class="form-check-label" for="showActivity">Mostrar mi actividad en el feed</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="allowMessages" checked>
+                                        <label class="form-check-label" for="allowMessages">Permitir mensajes directos</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between mt-4">
+                                <a href="perfil.html" class="btn btn-outline-secondary">Cancelar</a>
+                                <button type="submit" class="btn" style="background: var(--gradient-primary); color: white;">
+                                    Guardar cambios
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple script for navbar scrolling effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.feed-navbar');
+            if (window.scrollY > 10) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Prevent form submission (for demo purposes)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Cambios guardados con éxito!');
+            window.location.href = 'perfil.html';
+        });
+    </script>
+</body>
+</html>
