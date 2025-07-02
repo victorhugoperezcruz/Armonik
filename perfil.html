@@ -9,248 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="feed.css">
-    <style>
-        .profile-cover {
-            height: 260px;
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .profile-cover img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.8;
-        }
-        
-        .profile-avatar-container {
-            position: absolute;
-            bottom: -60px;
-            left: 50px;
-            z-index: 10;
-        }
-        
-        .profile-avatar {
-            width: 150px;
-            height: 150px;
-            border: 5px solid white;
-            border-radius: 50%;
-            box-shadow: var(--shadow-md);
-            background: white;
-            overflow: hidden;
-        }
-        
-        .profile-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .profile-info-container {
-            background: white;
-            padding-top: 80px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #e5e7eb;
-        }
-        
-        .profile-actions {
-            margin-top: 20px;
-        }
-        
-        .profile-action-btn {
-            padding: 8px 16px;
-            margin-right: 10px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        
-        .profile-tabs {
-            background: white;
-            padding: 0 20px;
-        }
-        
-        .nav-tabs {
-            border-bottom: none;
-        }
-        
-        .nav-tabs .nav-link {
-            border: none;
-            padding: 16px 20px;
-            color: var(--text-light);
-            font-weight: 500;
-            position: relative;
-            margin-right: 20px;
-        }
-        
-        .nav-tabs .nav-link:hover {
-            color: var(--text-dark);
-        }
-        
-        .nav-tabs .nav-link.active {
-            color: var(--primary-color);
-            background: transparent;
-            font-weight: 600;
-        }
-        
-        .nav-tabs .nav-link.active:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient-primary);
-            border-radius: 3px 3px 0 0;
-        }
-        
-        .tab-content {
-            padding: 30px 0;
-            background: #f9fafb;
-        }
-        
-        .profile-stat {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s;
-        }
-        
-        .profile-stat:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .stat-value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-        
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-        
-        .music-item {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s;
-        }
-        
-        .music-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .music-info {
-            padding: 15px;
-        }
-        
-        .music-title {
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-        
-        .music-meta {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-        }
-        
-        .music-controls {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .music-control-btn {
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            border: none;
-            color: white;
-            background: var(--gradient-primary);
-            transition: all 0.3s;
-            font-size: 1rem;
-        }
-        
-        .music-control-btn:hover {
-            transform: scale(1.1);
-        }
-        
-        .badge-verified {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-left: 10px;
-        }
-        
-        .achievement-card {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            background: white;
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s;
-        }
-        
-        .achievement-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .achievement-icon {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--gradient-primary);
-            color: white;
-            border-radius: 12px;
-            font-size: 1.5rem;
-        }
-        
-        .achievement-info {
-            flex-grow: 1;
-        }
-        
-        .achievement-title {
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .achievement-desc {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            margin-bottom: 0;
-        }
-        
-        .achievement-date {
-            color: var(--text-light);
-            font-size: 0.8rem;
-            white-space: nowrap;
-        }
-    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -267,7 +25,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
                         <li><a class="dropdown-item" href="perfil.html"><i class="bi bi-person me-2"></i>Mi perfil</a></li>
-                        <li><a class="dropdown-item" href="configuracion.html"><i class="bi bi-gear me-2"></i>Configuración</a></li>
+                        <li><a class="dropdown-item" href="editarP.html"><i class="bi bi-gear me-2"></i>Configuración</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="index.html"><i class="bi bi-box-arrow-right me-2"></i>Cerrar sesión</a></li>
                     </ul>
@@ -289,13 +47,13 @@
                         <a class="nav-link" href="feed.html"><i class="bi bi-house-door me-1"></i><span class="nav-text">Feed</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi bi-trophy me-1"></i><span class="nav-text">Misiones</span></a>
+                        <a class="nav-link" href="misiones.html"><i class="bi bi-trophy me-1"></i><span class="nav-text">Misiones</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi bi-people me-1"></i><span class="nav-text">Red</span></a>
+                        <a class="nav-link" href="red.html"><i class="bi bi-people me-1"></i><span class="nav-text">Red</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi bi-calendar-event me-1"></i><span class="nav-text">Eventos</span></a>
+                        <a class="nav-link" href="eventos.html"><i class="bi bi-calendar-event me-1"></i><span class="nav-text">Eventos</span></a>
                     </li>
                 </ul>
             </div>
@@ -305,10 +63,12 @@
     <!-- Profile Cover -->
     <div class="profile-cover">
         <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1600&h=400&q=80" alt="Cover image">
-        <div class="profile-avatar-container">
-            <div class="profile-avatar">
-                <img src="https://i.pravatar.cc/300?img=8" alt="Carlos Moreno">
-            </div>
+    </div>
+
+    <!-- Profile Avatar (now separate from cover) -->
+    <div class="profile-avatar-container">
+        <div class="profile-avatar">
+            <img src="https://i.pravatar.cc/300?img=8" alt="Carlos Moreno">
         </div>
     </div>
 
