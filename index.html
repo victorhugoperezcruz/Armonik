@@ -18,7 +18,7 @@
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#quienes-somos">¿Quiénes somos?</a></li>
                 <li><a href="#como-funciona">¿Cómo funciona?</a></li>
-                <li><a href="#freemium">Freemium</a></li>
+                <li><a href="#planes">Planes</a></li>
                 <li><a href="#plan-crecimiento">Plan de crecimiento</a></li>
                 <li><a href="#contacto">Contacto</a></li>
                 <li><a href="#" id="login-btn" class="nav-login">Iniciar Sesión</a></li>
@@ -45,6 +45,39 @@
             </div>
         </div>
     </section>
+
+    <!-- Sección Misión y Visión -->
+    <section id="mision-vision" class="section bg-light">
+        <div class="container">
+            <div class="mv-grid" style="display: flex; flex-wrap: wrap; gap: 3rem; justify-content: center;">
+                <div class="mv-item animated-mv" style="flex:1 1 320px; min-width:280px; max-width:500px; background:white; border-radius:20px; box-shadow:var(--shadow-md); padding:2.5rem; margin-bottom:1.5rem; opacity:0; transform:translateY(40px); transition:opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);">
+                    <h2 class="section-title" style="font-size:2.2rem; margin-bottom:1rem;">Misión</h2>
+                    <p class="section-description" style="font-size:1.15rem; margin-bottom:0;">Conectar artistas emergentes y fans en una plataforma profesional y cercana, facilitando colaboraciones reales, visibilidad auténtica y crecimiento creativo.</p>
+                </div>
+                <div class="mv-item animated-mv" style="flex:1 1 320px; min-width:280px; max-width:500px; background:white; border-radius:20px; box-shadow:var(--shadow-md); padding:2.5rem; margin-bottom:1.5rem; opacity:0; transform:translateY(40px); transition:opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1); transition-delay:0.2s;">
+                    <h2 class="section-title" style="font-size:2.2rem; margin-bottom:1rem;">Visión</h2>
+                    <p class="section-description" style="font-size:1.15rem; margin-bottom:0;">Ser la plataforma líder en impulsar el talento musical, construyendo una comunidad global donde cada artista encuentre conexiones valiosas, recursos creativos y sensaciones únicas que inspiren su crecimiento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+    // Animación para Misión y Visión (fade in up al hacer scroll)
+    document.addEventListener('DOMContentLoaded', function() {
+        function animateMV() {
+            var mvItems = document.querySelectorAll('.animated-mv');
+            mvItems.forEach(function(item, idx) {
+                var rect = item.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 80) {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        animateMV();
+        window.addEventListener('scroll', animateMV);
+    });
+    </script>
 
     <!-- ¿Quiénes somos? Section -->
     <section id="quienes-somos" class="section">
@@ -127,44 +160,42 @@
         </div>
     </section>
 
-    <!-- Modelo Freemium Section -->
-    <section id="freemium" class="section">
+    <!-- Planes Section -->
+    <section id="planes" class="section">
         <div class="container">
-            <h2 class="section-title">Modelo Freemium</h2>
-            <div class="pricing-table">
-                <table class="comparison-table">
+            <h2 class="section-title" style="font-size:2.5rem; color:#7c3aed; letter-spacing:1px; text-shadow:0 2px 12px #e0e7ff; font-weight:800; margin-bottom:1.2rem;">✨ Planes y Beneficios ✨</h2>
+            <div class="pricing-table" style="overflow-x:auto;">
+                <div style="text-align:center; margin-bottom:1.5rem;">
+                    <span style="display:inline-block; background:linear-gradient(90deg,#a5b4fc,#fbc2eb); color:#312e81; font-size:1.25rem; font-weight:600; border-radius:1.5rem; padding:0.5rem 1.5rem; box-shadow:0 2px 12px #e0e7ff; letter-spacing:0.5px; margin-bottom:0.5rem; animation: pulseGlow 1.5s infinite alternate;">Elige el plan perfecto para tu viaje musical 🚀</span>
+                </div>
+                <table class="comparison-table" style="min-width:700px;">
                     <thead>
                         <tr>
-                            <th>Característica</th>
-                            <th>Versión Gratis</th>
-                            <th>Versión Premium</th>
+                            <th style="font-size:1.15em;">Plan</th>
+                            <th style="font-size:1.15em;">Artistas</th>
+                            <th style="font-size:1.15em;">Fans</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Perfil básico / completo</td>
-                            <td>✔️</td>
-                            <td>✔️ + portafolio detallado</td>
+                            <td><strong>Básico</strong><br><span style="font-size:1.3em;">🧑‍🎤</span></td>
+                            <td>Perfil básico (foto, bio, enlaces)<br>Publicaciones en feed (texto/audio)<br>5 conexiones/mes</td>
+                            <td>Perfil básico (foto, intereses musicales)<br>Seguir hasta 10 artistas<br>Acceso al feed</td>
                         </tr>
                         <tr>
-                            <td>Feed y red de contactos</td>
-                            <td>✔️</td>
-                            <td>✔️ con métricas avanzadas</td>
+                            <td><strong>Impulso</strong><br><span style="font-size:1.3em;">📁🏅</span></td>
+                            <td>Portafolio Lite (hasta 3 demos/fotos)<br>Misiones iniciales (ej. comparte 5 demos → insignia)</td>
+                            <td>Badges de fan (ej. seguir/comentar)<br>Notificaciones de livestreams públicos<br>Recomendaciones personalizadas</td>
                         </tr>
                         <tr>
-                            <td>Misiones: recompensas básicas</td>
-                            <td>✔️</td>
-                            <td>✔️ descuentos y skins exclusivos</td>
+                            <td><strong>Profesional</strong><br><span style="font-size:1.3em;">🌟📊</span></td>
+                            <td>Perfil Pro (hasta 10 demos, logros, certificados)<br>Analíticas básicas<br>Misiones intermedias (ej. 20 conexiones → descuento)</td>
+                            <td>Contenido exclusivo (Vods, vídeos y mas)<br>Misiones de fan (ej. comentar 5 posts → sticker)<br>Acceso anticipado a lanzamientos</td>
                         </tr>
                         <tr>
-                            <td>Vacantes y eventos</td>
-                            <td>✔️</td>
-                            <td>✔️ priorización y alertas</td>
-                        </tr>
-                        <tr>
-                            <td>Personalización y herramientas editoras</td>
-                            <td>—</td>
-                            <td>✔️ filtros, plantillas VIP</td>
+                            <td><strong>Estrella</strong><br><span style="font-size:1.3em;">👑🚀🎫</span></td>
+                            <td>Perfil Elite (analíticas avanzadas, heatmap, sugerencias de colaboración)<br>Toolkit promocional (plantillas vídeo/gráfica)<br>Misiones avanzadas (ej. 15 streams → entradas VIP)<br>Artista destacado en home</td>
+                            <td>Fan Premium (livestreams privados, Q&A con artistas)<br>Descuentos en conciertos y merchandise<br>Ranking global de fans</td>
                         </tr>
                     </tbody>
                 </table>
@@ -297,7 +328,7 @@
                         <h4>Plataforma</h4>
                         <ul>
                             <li><a href="#como-funciona">¿Cómo funciona?</a></li>
-                            <li><a href="#freemium">Planes y Precios</a></li>
+                            <li><a href="#planes">Planes y Precios</a></li>
                             <li><a href="#contacto">Contacto</a></li>
                             <li><a href="login.html">Iniciar Sesión</a></li>
                         </ul>
