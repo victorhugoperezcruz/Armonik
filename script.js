@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Here you would normally send the data to your backend
             // For demo purposes, redirect to dashboard
-            window.location.href = 'dashboard.html';
+            window.location.href = 'feed.html';
         });
     }
 
@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (email && password) {
                 alert('¡Bienvenido de vuelta a Armonik!');
                 // Here you would normally handle the login logic
-                window.location.href = 'dashboard.html';
+                window.location.href = 'feed.html';
             }
         });
     }
